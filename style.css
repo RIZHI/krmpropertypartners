@@ -1,0 +1,410 @@
+/* ---------- BASE RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #faf7f2;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-repeat: repeat;
+  font-family: "Inter", "Noto Sans Tamil", sans-serif;
+  color: #222;
+}
+
+/* body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fafaf7;
+  color: #1e3a34;
+  line-height: 1.6;
+} */
+
+/* ---------- NAVBAR ---------- */
+header {
+  background-color: #1e3a34;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+}
+.logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.menu-toggle {
+  display: block;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #1e3a34;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 200px;
+  padding: 1rem;
+}
+.nav-links.active {
+  display: flex;
+}
+.nav-links li {
+  list-style: none;
+  margin: 0.6rem 0;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #d4af37;
+}
+
+/* ---------- HERO SECTION ---------- */
+
+/* ---------- HERO SECTION (NO BACKGROUND IMAGE) ---------- */
+.hero {
+  background-color: #f4f0e6; /* soft Tamil stone-beige tone */
+  color: #1e3a34;
+  text-align: center;
+  padding: 7rem 0.5rem 4rem;
+  border-bottom: 2px solid #4a7259; 
+}
+
+.hero h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1e3a34;
+}
+
+.hero p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.btn {
+  background-color: #1e3a34;
+  color: #f4f0e6;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2d5247;
+}
+
+/* ---------- SECTION BASE ---------- */
+section {
+  padding: 4rem 1rem 2.5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+@media (min-width: 900px) {
+  .hero {
+    padding: 7rem 2rem 4rem; /* reduced space */
+  }
+}
+h2 {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.8rem;
+  color: #1e3a34;
+  position: relative;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #d4af37;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* ---------- SERVICES ---------- */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.service-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.service-card h3 {
+  font-size: 1rem;
+  color: #1e3a34;
+  margin-bottom: 0.6rem;
+}
+
+/* ---------- SERVICE ICONS ---------- */
+.service-card .icon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 0.8rem;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.service-card:hover .icon {
+  transform: scale(1.05);
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.15));
+}
+
+/* slightly smaller on narrow phones */
+@media (max-width: 400px) {
+  .service-card .icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.6rem;
+  }
+}
+
+.service-card ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+}
+.service-card li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- ABOUT / WHY ---------- */
+.about p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.why-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: center;
+}
+.point h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: #1e3a34;
+}
+.point p {
+  font-size: 0.9rem;
+}
+
+/* ---------- CONTACT ---------- */
+
+/* ---------- CONTACT SECTION ---------- */
+.contact-section {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.contact-section p {
+  max-width: 600px;
+  margin: 0 auto 1.2rem;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Contact Buttons Container */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 18px auto 10px;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Common CTA Buttons */
+.cta-btn {
+  background: #1e3a34;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  display: block;
+  width: 100%;
+  min-width: 150px;
+  max-width: 320px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #2d5247;
+}
+
+/* WhatsApp Button */
+.cta-btn.whatsapp {
+  background: #25d366;
+}
+
+.cta-btn.whatsapp:hover {
+  background: #1ebe5c;
+}
+
+/* Footer */
+.contact-section .footer {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 1.5rem;
+}
+
+.contact p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 0.8rem;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+.contact-info {
+  text-align: center;
+  margin-top: 1rem;
+}
+.contact-info a {
+  color: #1e3a34;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #1e3a34;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Tablets (≥600px) */
+@media (min-width: 600px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  section {
+    padding: 5rem 1.5rem 3rem;
+  }
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .why-points {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: grid;
+  }
+}
+
+/* Desktops (≥900px) */
+@media (min-width: 900px) {
+  .menu-toggle {
+    display: none;
+  }
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+  .nav-links {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background: none;
+    width: auto;
+    padding: 0;
+  }
+  .nav-links li {
+    margin: 0 0 0 1.2rem;
+  }
+  .hero {
+    padding: 9rem 2rem 7rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* ---------- WHATSAPP CONNECT ---------- */
+/* ---------- CONTACT SECTION ---------- */
+.contact-section {
+  text-align: center;
+  padding: 3rem 1rem 2rem; /* reduced spacing */
+}
+
+.cta-btn {
+  background: #1e3a34;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #2d5247;
+}
+
+.cta-btn.whatsapp {
+  background: #25d366;
+}
+
+.cta-btn.whatsapp:hover {
+  background: #1ebe5c;
+}
+
+.contact-section .footer {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 1.5rem;
+}
